@@ -1,7 +1,7 @@
 describe GschoolEnumerable do
 
   before(:each) do
-    Array.include GschoolEnumerable
+    Array.include GschoolEnumerable #mixing in GSchool Enumerable module
   end
 
   describe "#g_each" do
@@ -16,7 +16,7 @@ describe GschoolEnumerable do
 
   describe "#g_select" do
     it "acts like select" do
-      skip
+
       values = [1, 2, 3].g_select { |value| value % 2 == 0 }
 
       expect(values).to eq([2])
@@ -25,7 +25,7 @@ describe GschoolEnumerable do
 
   describe "#g_reject" do
     it "acts like reject" do
-      skip
+
       values = [1, 2, 3].g_reject { |value| value % 2 == 0 }
 
       expect(values).to eq([1, 3])
@@ -34,7 +34,6 @@ describe GschoolEnumerable do
 
   describe "#g_map" do
     it "acts like map" do
-      skip
       values = [1, 2, 3].g_map { |value| value * 2 }
 
       expect(values).to eq([2, 4, 6])
@@ -43,14 +42,14 @@ describe GschoolEnumerable do
 
   describe "#g_find" do
     it "acts like find" do
-      skip
+
       value = [1, 2, 3].g_find { |value| value % 2 != 0 }
 
       expect(value).to eq(1)
     end
 
     it "returns nil if nothing is found" do
-      skip
+
       value = [1, 2, 3].g_find { |value| value > 5 }
 
       expect(value).to eq(nil)
@@ -59,7 +58,6 @@ describe GschoolEnumerable do
 
   describe "#g_select!" do
     it "acts like select!" do
-      skip
       items = [1, 2, 3]
 
       items.g_select! { |value| value % 2 == 0 }
